@@ -21,38 +21,63 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: #060816;
+      background: #050816;
       color: white;
       overflow-x: hidden;
+      position: relative;
     }
 
-    body::before {
-      content: "";
+    /* ANIMATED BACKGROUND */
+
+    .blob {
       position: fixed;
-      width: 500px;
-      height: 500px;
-      background: #00d9ff20;
-      filter: blur(120px);
-      top: -200px;
-      right: -100px;
+      border-radius: 50%;
+      filter: blur(100px);
       z-index: -1;
+      animation: blobMove 15s infinite alternate ease-in-out;
     }
 
-    body::after {
-      content: "";
-      position: fixed;
-      width: 500px;
-      height: 500px;
-      background: #7b2cff20;
-      filter: blur(120px);
-      bottom: -200px;
-      left: -100px;
-      z-index: -1;
+    .blob1 {
+      width: 350px;
+      height: 350px;
+      background: #00d9ff40;
+      top: 0;
+      left: 0;
     }
+
+    .blob2 {
+      width: 350px;
+      height: 350px;
+      background: #7b2cff40;
+      bottom: 0;
+      right: 0;
+      animation-duration: 18s;
+    }
+
+    .blob3 {
+      width: 250px;
+      height: 250px;
+      background: #ff00aa30;
+      top: 40%;
+      left: 40%;
+      animation-duration: 20s;
+    }
+
+    @keyframes blobMove {
+      from {
+        transform: translate(0px, 0px) scale(1);
+      }
+
+      to {
+        transform: translate(50px, -40px) scale(1.2);
+      }
+    }
+
+    /* NAVBAR */
 
     nav {
-      width: 100%;
       position: fixed;
+      width: 100%;
       top: 0;
       z-index: 1000;
       backdrop-filter: blur(15px);
@@ -70,7 +95,7 @@
     }
 
     .logo {
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 700;
       color: #00d9ff;
     }
@@ -86,11 +111,29 @@
       color: white;
       transition: 0.3s;
       font-weight: 500;
+      position: relative;
     }
 
     nav ul li a:hover {
       color: #00d9ff;
     }
+
+    nav ul li a::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      background: #00d9ff;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      transition: 0.4s;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO */
 
     .hero {
       min-height: 100vh;
@@ -111,21 +154,36 @@
 
     .hero-text h3 {
       color: #00d9ff;
-      font-size: 24px;
+      font-size: 25px;
       margin-bottom: 15px;
+      animation: fadeUp 1s ease;
     }
 
     .hero-text h1 {
       font-size: 75px;
       line-height: 1.1;
       margin-bottom: 25px;
+      animation: fadeUp 1.2s ease;
     }
 
     .hero-text p {
-      color: #c5c5c5;
-      line-height: 1.9;
+      color: #d1d1d1;
+      line-height: 2;
       font-size: 18px;
       margin-bottom: 35px;
+      animation: fadeUp 1.4s ease;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0px);
+      }
     }
 
     .buttons {
@@ -135,11 +193,28 @@
     }
 
     .btn {
-      padding: 14px 30px;
+      padding: 15px 32px;
       border-radius: 14px;
       text-decoration: none;
       font-weight: 600;
       transition: 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      top: 0;
+      left: 0;
+      transition: 0.5s;
+    }
+
+    .btn:hover::before {
+      width: 100%;
     }
 
     .btn-primary {
@@ -149,7 +224,7 @@
     }
 
     .btn-primary:hover {
-      transform: translateY(-5px);
+      transform: translateY(-5px) scale(1.05);
     }
 
     .btn-secondary {
@@ -160,7 +235,10 @@
     .btn-secondary:hover {
       background: #00d9ff;
       color: black;
+      transform: translateY(-5px);
     }
+
+    /* HERO IMAGE */
 
     .hero-image {
       display: flex;
@@ -169,15 +247,19 @@
     }
 
     .hero-image img {
-      width: 380px;
-      height: 380px;
+      width: 400px;
+      height: 400px;
       object-fit: cover;
       border-radius: 50%;
       border: 5px solid #00d9ff;
+
+      animation:
+        float 4s ease-in-out infinite,
+        glow 3s infinite alternate;
+
       box-shadow:
         0 0 30px #00d9ff80,
         0 0 60px #7b2cff50;
-      animation: float 4s ease-in-out infinite;
     }
 
     @keyframes float {
@@ -194,6 +276,22 @@
       }
     }
 
+    @keyframes glow {
+      from {
+        box-shadow:
+          0 0 20px #00d9ff80,
+          0 0 40px #7b2cff50;
+      }
+
+      to {
+        box-shadow:
+          0 0 50px #00d9ff,
+          0 0 90px #7b2cff;
+      }
+    }
+
+    /* SECTIONS */
+
     section {
       padding: 100px 20px;
     }
@@ -205,10 +303,12 @@
 
     .section-title {
       text-align: center;
-      font-size: 50px;
+      font-size: 55px;
       margin-bottom: 60px;
       color: #00d9ff;
     }
+
+    /* GLASS CARD */
 
     .glass-card {
       background: rgba(255, 255, 255, 0.05);
@@ -216,20 +316,52 @@
       backdrop-filter: blur(15px);
       border-radius: 25px;
       padding: 35px;
-      transition: 0.4s;
+      transition: 0.5s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      background: linear-gradient(
+        rgba(255,255,255,0.1),
+        transparent
+      );
+      transform: rotate(25deg);
+      top: -120%;
+      left: -120%;
+      transition: 0.8s;
+    }
+
+    .glass-card:hover::before {
+      top: -20%;
+      left: -20%;
     }
 
     .glass-card:hover {
-      transform: translateY(-10px);
+      transform:
+        translateY(-12px)
+        scale(1.02);
+
       border-color: #00d9ff;
-      box-shadow: 0 0 30px #00d9ff20;
+
+      box-shadow:
+        0 0 35px #00d9ff30;
     }
 
-    .about p {
+    .about p,
+    .exp-card p,
+    .project ul,
+    .contact p {
       line-height: 2;
-      color: #cfcfcf;
+      color: #d1d1d1;
       font-size: 17px;
     }
+
+    /* SKILLS */
 
     .skills-grid {
       display: grid;
@@ -239,47 +371,51 @@
 
     .skill-card {
       text-align: center;
-      padding: 30px;
+      padding: 35px;
+      transition: 0.4s;
+    }
+
+    .skill-card:hover {
+      transform:
+        translateY(-15px)
+        rotate(2deg)
+        scale(1.05);
     }
 
     .skill-card h3 {
-      font-size: 22px;
+      font-size: 24px;
     }
+
+    /* EXPERIENCE */
 
     .timeline {
       border-left: 3px solid #00d9ff;
       padding-left: 30px;
     }
 
-    .exp-card {
-      margin-bottom: 30px;
-    }
-
-    .exp-card h3 {
+    .exp-card h3,
+    .project h3 {
       color: #00d9ff;
-      margin-bottom: 10px;
-    }
-
-    .exp-card p {
-      color: #d4d4d4;
-      line-height: 1.9;
+      margin-bottom: 15px;
+      font-size: 28px;
     }
 
     .project ul {
       margin-left: 20px;
-      line-height: 2;
-      color: #d4d4d4;
     }
+
+    /* CONTACT */
 
     .contact {
       text-align: center;
     }
 
     .contact p {
-      font-size: 20px;
       margin-bottom: 15px;
-      color: #d4d4d4;
+      font-size: 20px;
     }
+
+    /* FOOTER */
 
     footer {
       text-align: center;
@@ -288,7 +424,17 @@
       border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
+    /* RESPONSIVE */
+
     @media(max-width:900px) {
+
+      .hero-text {
+        text-align: center;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
 
       .hero-text h1 {
         font-size: 50px;
@@ -297,10 +443,6 @@
       .hero-image img {
         width: 300px;
         height: 300px;
-      }
-
-      nav ul {
-        gap: 15px;
       }
 
       .section-title {
@@ -314,16 +456,12 @@
         display: none;
       }
 
-      .hero-text {
-        text-align: center;
-      }
-
-      .buttons {
-        justify-content: center;
-      }
-
       .hero-text h1 {
         font-size: 40px;
+      }
+
+      .hero-text p {
+        font-size: 16px;
       }
     }
   </style>
@@ -331,7 +469,16 @@
 
 <body>
 
+  <!-- ANIMATED BACKGROUND -->
+
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+
+  <!-- NAVBAR -->
+
   <nav>
+
     <div class="nav-container">
 
       <div class="logo">Portfolio</div>
@@ -345,7 +492,10 @@
       </ul>
 
     </div>
+
   </nav>
+
+  <!-- HERO -->
 
   <section class="hero">
 
@@ -387,6 +537,8 @@
 
   </section>
 
+  <!-- ABOUT -->
+
   <section id="about">
 
     <div class="container">
@@ -398,7 +550,7 @@
         <p>
           Skilled Programmer Analyst with hands-on experience in ETL support,
           SQL validations, Linux support, Incident Management,
-          Production Support activities and automation support for
+          Production Support and automation support for
           Royal Bank of Canada project at Cognizant.
           Experienced in handling 50+ applications,
           SLA monitoring, deployments and ticket resolution activities.
@@ -409,6 +561,8 @@
     </div>
 
   </section>
+
+  <!-- SKILLS -->
 
   <section id="skills">
 
@@ -464,6 +618,8 @@
 
   </section>
 
+  <!-- EXPERIENCE -->
+
   <section id="experience">
 
     <div class="container">
@@ -485,10 +641,10 @@
           <p>
             • ETL support for 50+ applications<br>
             • SQL validations and issue resolution<br>
-            • Linux & Hadoop file monitoring<br>
+            • Linux & Hadoop monitoring<br>
             • Production, UAT & DEV support<br>
             • Incident Management handling<br>
-            • Automation support for manual activities<br>
+            • Automation support activities<br>
             • SLA monitoring and ticket handling
           </p>
 
@@ -500,6 +656,8 @@
 
   </section>
 
+  <!-- PROJECTS -->
+
   <section id="projects">
 
     <div class="container">
@@ -508,9 +666,7 @@
 
       <div class="glass-card project">
 
-        <h3 style="color:#00d9ff; margin-bottom:20px;">
-          Royal Bank of Canada
-        </h3>
+        <h3>Royal Bank of Canada</h3>
 
         <ul>
           <li>ETL Monitoring and Support</li>
@@ -518,7 +674,7 @@
           <li>SQL Validations and Data Checks</li>
           <li>Incident Resolution</li>
           <li>ServiceNow Ticket Handling</li>
-          <li>Linux & Hadoop File Monitoring</li>
+          <li>Linux & Hadoop Monitoring</li>
           <li>Automation Support Activities</li>
         </ul>
 
@@ -527,6 +683,8 @@
     </div>
 
   </section>
+
+  <!-- CONTACT -->
 
   <section id="contact">
 
@@ -545,6 +703,8 @@
     </div>
 
   </section>
+
+  <!-- FOOTER -->
 
   <footer>
     © 2026 Prathyusha Donthula Portfolio
