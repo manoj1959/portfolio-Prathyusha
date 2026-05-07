@@ -3,519 +3,477 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Prathyusha Donthula Portfolio</title>
+  <title>Prathyusha Donthula | Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
 
   <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
-    body{
-      font-family:'Poppins',sans-serif;
-      background:#f5f5f5;
-      overflow-x:hidden;
-      color:#111;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #050816;
+      color: white;
+      overflow-x: hidden;
+      position: relative;
     }
 
-    section{
-      padding:100px 8%;
+    /* ANIMATED BACKGROUND */
+
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      z-index: -1;
+      animation: blobMove 15s infinite alternate ease-in-out;
+    }
+
+    .blob1 {
+      width: 350px;
+      height: 350px;
+      background: #00d9ff40;
+      top: 0;
+      left: 0;
+    }
+
+    .blob2 {
+      width: 350px;
+      height: 350px;
+      background: #7b2cff40;
+      bottom: 0;
+      right: 0;
+      animation-duration: 18s;
+    }
+
+    .blob3 {
+      width: 250px;
+      height: 250px;
+      background: #ff00aa30;
+      top: 40%;
+      left: 40%;
+      animation-duration: 20s;
+    }
+
+    @keyframes blobMove {
+      from {
+        transform: translate(0px, 0px) scale(1);
+      }
+
+      to {
+        transform: translate(50px, -40px) scale(1.2);
+      }
     }
 
     /* NAVBAR */
 
-    nav{
-      width:100%;
-      position:fixed;
-      top:0;
-      left:0;
-      z-index:1000;
-      background:rgba(255,255,255,0.8);
-      backdrop-filter:blur(15px);
-      border-bottom:1px solid #e5e5e5;
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(15px);
+      background: rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .nav-container{
-      max-width:1300px;
-      margin:auto;
-      padding:22px 20px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .logo{
-      font-size:32px;
-      font-weight:700;
-      color:#ff7b29;
+    .logo {
+      font-size: 30px;
+      font-weight: 700;
+      color: #00d9ff;
     }
 
-    nav ul{
-      display:flex;
-      list-style:none;
-      gap:35px;
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
     }
 
-    nav ul li a{
-      text-decoration:none;
-      color:#111;
-      font-weight:500;
-      transition:0.3s;
-      position:relative;
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+      font-weight: 500;
+      position: relative;
     }
 
-    nav ul li a:hover{
-      color:#ff7b29;
+    nav ul li a:hover {
+      color: #00d9ff;
     }
 
-    nav ul li a::after{
-      content:'';
-      width:0%;
-      height:2px;
-      background:#ff7b29;
-      position:absolute;
-      left:0;
-      bottom:-5px;
-      transition:0.4s;
+    nav ul li a::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      background: #00d9ff;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      transition: 0.4s;
     }
 
-    nav ul li a:hover::after{
-      width:100%;
+    nav ul li a:hover::after {
+      width: 100%;
     }
 
     /* HERO */
 
-    .hero{
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      position:relative;
-      overflow:hidden;
-      padding-top:120px;
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 120px 20px 80px;
     }
 
-    .hero-container{
-      max-width:1300px;
-      width:100%;
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
-      align-items:center;
-      position:relative;
+    .hero-container {
+      max-width: 1200px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      align-items: center;
+      gap: 60px;
     }
 
-    /* LEFT */
-
-    .hero-left{
-      animation:fadeLeft 1s ease;
+    .hero-text h3 {
+      color: #00d9ff;
+      font-size: 25px;
+      margin-bottom: 15px;
+      animation: fadeUp 1s ease;
     }
 
-    .review-box{
-      max-width:250px;
-      line-height:1.8;
-      color:#444;
-      font-size:16px;
+    .hero-text h1 {
+      font-size: 75px;
+      line-height: 1.1;
+      margin-bottom: 25px;
+      animation: fadeUp 1.2s ease;
     }
 
-    /* CENTER */
-
-    .hero-center{
-      text-align:center;
-      position:relative;
-      animation:fadeUp 1.2s ease;
+    .hero-text p {
+      color: #d1d1d1;
+      line-height: 2;
+      font-size: 18px;
+      margin-bottom: 35px;
+      animation: fadeUp 1.4s ease;
     }
 
-    .hello{
-      display:inline-block;
-      border:2px solid #111;
-      padding:12px 30px;
-      border-radius:40px;
-      margin-bottom:25px;
-      font-weight:500;
-      background:white;
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0px);
+      }
     }
 
-    .hero-center h1{
-      font-size:95px;
-      line-height:1.05;
-      font-weight:700;
-      margin-bottom:20px;
+    .buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .hero-center h1 span{
-      color:#ff7b29;
+    .btn {
+      padding: 15px 32px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.4s;
+      position: relative;
+      overflow: hidden;
     }
 
-    .orange-circle{
-      width:650px;
-      height:650px;
-      background:#ffb26b;
-      border-radius:50%;
-      position:absolute;
-      left:50%;
-      transform:translateX(-50%);
-      bottom:-340px;
-      z-index:0;
+    .btn::before {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      top: 0;
+      left: 0;
+      transition: 0.5s;
     }
 
-    .hero-image{
-      position:relative;
-      z-index:2;
-      animation:float 4s ease-in-out infinite;
+    .btn:hover::before {
+      width: 100%;
     }
 
-    .hero-image img{
-      width:430px;
-      object-fit:contain;
-      filter:drop-shadow(0px 20px 40px rgba(0,0,0,0.2));
+    .btn-primary {
+      background: linear-gradient(45deg, #00d9ff, #7b2cff);
+      color: white;
+      box-shadow: 0 0 30px #00d9ff50;
     }
 
-    /* BUTTONS */
-
-    .hero-buttons{
-      margin-top:20px;
-      display:flex;
-      justify-content:center;
-      gap:20px;
-      position:relative;
-      z-index:3;
+    .btn-primary:hover {
+      transform: translateY(-5px) scale(1.05);
     }
 
-    .hero-buttons a{
-      text-decoration:none;
-      padding:18px 40px;
-      border-radius:50px;
-      font-weight:600;
-      transition:0.4s;
-      font-size:18px;
+    .btn-secondary {
+      border: 1px solid #00d9ff;
+      color: #00d9ff;
     }
 
-    .btn1{
-      background:#ff7b29;
-      color:white;
-      box-shadow:0 10px 30px rgba(255,123,41,0.4);
+    .btn-secondary:hover {
+      background: #00d9ff;
+      color: black;
+      transform: translateY(-5px);
     }
 
-    .btn1:hover{
-      transform:translateY(-8px) scale(1.05);
+    /* HERO IMAGE */
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      position: relative;
     }
 
-    .btn2{
-      background:white;
-      color:#111;
-      border:2px solid #ddd;
+    .hero-image img {
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #00d9ff;
+
+      animation:
+        float 4s ease-in-out infinite,
+        glow 3s infinite alternate;
+
+      box-shadow:
+        0 0 30px #00d9ff80,
+        0 0 60px #7b2cff50;
     }
 
-    .btn2:hover{
-      background:#111;
-      color:white;
-      transform:translateY(-8px);
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
     }
 
-    /* RIGHT */
+    @keyframes glow {
+      from {
+        box-shadow:
+          0 0 20px #00d9ff80,
+          0 0 40px #7b2cff50;
+      }
 
-    .hero-right{
-      text-align:right;
-      animation:fadeRight 1s ease;
+      to {
+        box-shadow:
+          0 0 50px #00d9ff,
+          0 0 90px #7b2cff;
+      }
     }
 
-    .stars{
-      color:#ff7b29;
-      font-size:40px;
-      margin-bottom:10px;
+    /* SECTIONS */
+
+    section {
+      padding: 100px 20px;
     }
 
-    .experience{
-      font-size:58px;
-      font-weight:700;
-      color:#111;
+    .container {
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .experience-text{
-      color:#555;
-      font-size:18px;
+    .section-title {
+      text-align: center;
+      font-size: 55px;
+      margin-bottom: 60px;
+      color: #00d9ff;
     }
 
-    /* ABOUT */
+    /* GLASS CARD */
 
-    .section-title{
-      text-align:center;
-      font-size:60px;
-      margin-bottom:60px;
-      color:#111;
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(15px);
+      border-radius: 25px;
+      padding: 35px;
+      transition: 0.5s;
+      position: relative;
+      overflow: hidden;
     }
 
-    .about-card{
-      max-width:1100px;
-      margin:auto;
-      background:white;
-      padding:50px;
-      border-radius:30px;
-      box-shadow:0 10px 40px rgba(0,0,0,0.08);
-      transition:0.4s;
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      background: linear-gradient(
+        rgba(255,255,255,0.1),
+        transparent
+      );
+      transform: rotate(25deg);
+      top: -120%;
+      left: -120%;
+      transition: 0.8s;
     }
 
-    .about-card:hover{
-      transform:translateY(-10px);
+    .glass-card:hover::before {
+      top: -20%;
+      left: -20%;
     }
 
-    .about-card p{
-      font-size:18px;
-      line-height:2;
-      color:#444;
+    .glass-card:hover {
+      transform:
+        translateY(-12px)
+        scale(1.02);
+
+      border-color: #00d9ff;
+
+      box-shadow:
+        0 0 35px #00d9ff30;
+    }
+
+    .about p,
+    .exp-card p,
+    .project ul,
+    .contact p {
+      line-height: 2;
+      color: #d1d1d1;
+      font-size: 17px;
     }
 
     /* SKILLS */
 
-    .skills-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:30px;
-      max-width:1200px;
-      margin:auto;
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
     }
 
-    .skill-card{
-      background:white;
-      padding:40px 20px;
-      text-align:center;
-      border-radius:25px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.08);
-      transition:0.4s;
-      cursor:pointer;
+    .skill-card {
+      text-align: center;
+      padding: 35px;
+      transition: 0.4s;
     }
 
-    .skill-card:hover{
+    .skill-card:hover {
       transform:
-      translateY(-15px)
-      rotate(2deg);
-
-      background:#ff7b29;
-      color:white;
+        translateY(-15px)
+        rotate(2deg)
+        scale(1.05);
     }
 
-    .skill-card h3{
-      font-size:24px;
+    .skill-card h3 {
+      font-size: 24px;
     }
 
     /* EXPERIENCE */
 
-    .exp-card{
-      max-width:1100px;
-      margin:auto;
-      background:white;
-      padding:50px;
-      border-radius:30px;
-      box-shadow:0 10px 40px rgba(0,0,0,0.08);
-      transition:0.4s;
+    .timeline {
+      border-left: 3px solid #00d9ff;
+      padding-left: 30px;
     }
 
-    .exp-card:hover{
-      transform:translateY(-10px);
+    .exp-card h3,
+    .project h3 {
+      color: #00d9ff;
+      margin-bottom: 15px;
+      font-size: 28px;
     }
 
-    .exp-card h3{
-      color:#ff7b29;
-      font-size:35px;
-      margin-bottom:15px;
-    }
-
-    .exp-card p{
-      line-height:2;
-      color:#444;
-      font-size:18px;
-    }
-
-    /* PROJECT */
-
-    .project-card{
-      max-width:1100px;
-      margin:auto;
-      background:white;
-      padding:50px;
-      border-radius:30px;
-      box-shadow:0 10px 40px rgba(0,0,0,0.08);
-      transition:0.4s;
-    }
-
-    .project-card:hover{
-      transform:translateY(-10px);
-    }
-
-    .project-card h3{
-      color:#ff7b29;
-      font-size:35px;
-      margin-bottom:20px;
-    }
-
-    .project-card ul{
-      margin-left:20px;
-      line-height:2;
-      color:#444;
-      font-size:18px;
+    .project ul {
+      margin-left: 20px;
     }
 
     /* CONTACT */
 
-    .contact-card{
-      max-width:900px;
-      margin:auto;
-      background:white;
-      padding:50px;
-      border-radius:30px;
-      box-shadow:0 10px 40px rgba(0,0,0,0.08);
-      text-align:center;
-      transition:0.4s;
+    .contact {
+      text-align: center;
     }
 
-    .contact-card:hover{
-      transform:translateY(-10px);
+    .contact p {
+      margin-bottom: 15px;
+      font-size: 20px;
     }
 
-    .contact-card p{
-      font-size:22px;
-      margin-bottom:15px;
-      color:#444;
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #999;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    footer{
-      text-align:center;
-      padding:30px;
-      background:white;
-      color:#666;
-      margin-top:50px;
-    }
+    /* RESPONSIVE */
 
-    /* ANIMATIONS */
+    @media(max-width:900px) {
 
-    @keyframes float{
-      0%{
-        transform:translateY(0px);
+      .hero-text {
+        text-align: center;
       }
 
-      50%{
-        transform:translateY(-20px);
+      .buttons {
+        justify-content: center;
       }
 
-      100%{
-        transform:translateY(0px);
-      }
-    }
-
-    @keyframes fadeUp{
-      from{
-        opacity:0;
-        transform:translateY(50px);
+      .hero-text h1 {
+        font-size: 50px;
       }
 
-      to{
-        opacity:1;
-        transform:translateY(0px);
+      .hero-image img {
+        width: 300px;
+        height: 300px;
+      }
+
+      .section-title {
+        font-size: 40px;
       }
     }
 
-    @keyframes fadeLeft{
-      from{
-        opacity:0;
-        transform:translateX(-50px);
+    @media(max-width:600px) {
+
+      nav ul {
+        display: none;
       }
 
-      to{
-        opacity:1;
-        transform:translateX(0px);
-      }
-    }
-
-    @keyframes fadeRight{
-      from{
-        opacity:0;
-        transform:translateX(50px);
+      .hero-text h1 {
+        font-size: 40px;
       }
 
-      to{
-        opacity:1;
-        transform:translateX(0px);
+      .hero-text p {
+        font-size: 16px;
       }
     }
-
-    /* MOBILE */
-
-    @media(max-width:1100px){
-
-      .hero-container{
-        grid-template-columns:1fr;
-        text-align:center;
-        gap:50px;
-      }
-
-      .hero-left,
-      .hero-right{
-        text-align:center;
-      }
-
-      .review-box{
-        margin:auto;
-      }
-
-      .hero-center h1{
-        font-size:65px;
-      }
-
-      .orange-circle{
-        width:500px;
-        height:500px;
-        bottom:-250px;
-      }
-
-      .hero-image img{
-        width:320px;
-      }
-    }
-
-    @media(max-width:700px){
-
-      nav ul{
-        display:none;
-      }
-
-      .hero-center h1{
-        font-size:48px;
-      }
-
-      .hero-buttons{
-        flex-direction:column;
-        align-items:center;
-      }
-
-      .orange-circle{
-        width:380px;
-        height:380px;
-        bottom:-180px;
-      }
-
-      .hero-image img{
-        width:250px;
-      }
-
-      .section-title{
-        font-size:42px;
-      }
-    }
-
   </style>
-
 </head>
 
 <body>
+
+  <!-- ANIMATED BACKGROUND -->
+
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
 
   <!-- NAVBAR -->
 
@@ -543,60 +501,35 @@
 
     <div class="hero-container">
 
-      <!-- LEFT -->
+      <div class="hero-text">
 
-      <div class="hero-left">
+        <h3>Hello, I'm</h3>
 
-        <div class="review-box">
-          Prathyusha is a skilled Programmer Analyst with expertise in ETL,
-          SQL validations, Linux support and Production Support activities.
-        </div>
+        <h1>Prathyusha Donthula</h1>
 
-      </div>
+        <p>
+          Experienced Programmer Analyst at Cognizant Technology Solutions
+          with expertise in ETL, SQL, Linux, UNIX, IBM InfoSphere DataStage,
+          Excel, C Basics, Production Support and Incident Management.
+        </p>
 
-      <!-- CENTER -->
+        <div class="buttons">
 
-      <div class="hero-center">
-
-        <div class="hello">Hello!</div>
-
-        <h1>
-          I'm <span>Prathyusha,</span><br>
-          Programmer<br>
-          Analyst
-        </h1>
-
-        <div class="hero-image">
-          <img src="profile.jpeg" alt="Prathyusha">
-        </div>
-
-        <div class="hero-buttons">
-
-          <a href="resume.pdf" download class="btn1">
-            Download Resume ↗
+          <a href="resume.pdf" class="btn btn-primary" download>
+            Download Resume
           </a>
 
-          <a href="#contact" class="btn2">
-            Contact Me ↗
+          <a href="#contact" class="btn btn-secondary">
+            Contact Me
           </a>
 
         </div>
 
-        <div class="orange-circle"></div>
-
       </div>
 
-      <!-- RIGHT -->
+      <div class="hero-image">
 
-      <div class="hero-right">
-
-        <div class="stars">★★★★★</div>
-
-        <div class="experience">2+ Years</div>
-
-        <div class="experience-text">
-          Experience
-        </div>
+        <img src="profile.jpeg" alt="Prathyusha">
 
       </div>
 
@@ -608,19 +541,22 @@
 
   <section id="about">
 
-    <h2 class="section-title">About Me</h2>
+    <div class="container">
 
-    <div class="about-card">
+      <h2 class="section-title">About Me</h2>
 
-      <p>
-        Experienced Programmer Analyst at Cognizant Technology Solutions
-        with expertise in ETL Support, SQL validations,
-        Linux, UNIX, IBM InfoSphere DataStage,
-        Excel, C Basics and Production Support.
-        Experienced in handling incidents,
-        SLA monitoring and support activities
-        for Royal Bank of Canada project.
-      </p>
+      <div class="glass-card about">
+
+        <p>
+          Skilled Programmer Analyst with hands-on experience in ETL support,
+          SQL validations, Linux support, Incident Management,
+          Production Support and automation support for
+          Royal Bank of Canada project at Cognizant.
+          Experienced in handling 50+ applications,
+          SLA monitoring, deployments and ticket resolution activities.
+        </p>
+
+      </div>
 
     </div>
 
@@ -630,48 +566,52 @@
 
   <section id="skills">
 
-    <h2 class="section-title">Skills</h2>
+    <div class="container">
 
-    <div class="skills-grid">
+      <h2 class="section-title">Skills</h2>
 
-      <div class="skill-card">
-        <h3>SQL</h3>
-      </div>
+      <div class="skills-grid">
 
-      <div class="skill-card">
-        <h3>Excel</h3>
-      </div>
+        <div class="glass-card skill-card">
+          <h3>SQL</h3>
+        </div>
 
-      <div class="skill-card">
-        <h3>C Basics</h3>
-      </div>
+        <div class="glass-card skill-card">
+          <h3>Excel</h3>
+        </div>
 
-      <div class="skill-card">
-        <h3>IBM DataStage</h3>
-      </div>
+        <div class="glass-card skill-card">
+          <h3>C Basics</h3>
+        </div>
 
-      <div class="skill-card">
-        <h3>Linux</h3>
-      </div>
+        <div class="glass-card skill-card">
+          <h3>IBM DataStage</h3>
+        </div>
 
-      <div class="skill-card">
-        <h3>UNIX</h3>
-      </div>
+        <div class="glass-card skill-card">
+          <h3>Linux</h3>
+        </div>
 
-      <div class="skill-card">
-        <h3>ServiceNow</h3>
-      </div>
+        <div class="glass-card skill-card">
+          <h3>UNIX</h3>
+        </div>
 
-      <div class="skill-card">
-        <h3>Stonebranch</h3>
-      </div>
+        <div class="glass-card skill-card">
+          <h3>ServiceNow</h3>
+        </div>
 
-      <div class="skill-card">
-        <h3>OpenShift</h3>
-      </div>
+        <div class="glass-card skill-card">
+          <h3>Stonebranch</h3>
+        </div>
 
-      <div class="skill-card">
-        <h3>PuTTY</h3>
+        <div class="glass-card skill-card">
+          <h3>OpenShift</h3>
+        </div>
+
+        <div class="glass-card skill-card">
+          <h3>PuTTY</h3>
+        </div>
+
       </div>
 
     </div>
@@ -682,27 +622,35 @@
 
   <section id="experience">
 
-    <h2 class="section-title">Experience</h2>
+    <div class="container">
 
-    <div class="exp-card">
+      <h2 class="section-title">Experience</h2>
 
-      <h3>Cognizant Technology Solutions</h3>
+      <div class="timeline">
 
-      <p>
-        Programmer Analyst | August 2023 - Present
-      </p>
+        <div class="glass-card exp-card">
 
-      <br>
+          <h3>Cognizant Technology Solutions</h3>
 
-      <p>
-        • ETL support for 50+ applications<br>
-        • SQL validations and issue resolution<br>
-        • Linux & Hadoop file monitoring<br>
-        • Production, UAT & DEV support<br>
-        • Incident Management handling<br>
-        • Automation support activities<br>
-        • SLA monitoring and ticket handling
-      </p>
+          <p>
+            Programmer Analyst | August 2023 - Present
+          </p>
+
+          <br>
+
+          <p>
+            • ETL support for 50+ applications<br>
+            • SQL validations and issue resolution<br>
+            • Linux & Hadoop monitoring<br>
+            • Production, UAT & DEV support<br>
+            • Incident Management handling<br>
+            • Automation support activities<br>
+            • SLA monitoring and ticket handling
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
 
@@ -712,21 +660,25 @@
 
   <section id="projects">
 
-    <h2 class="section-title">Projects</h2>
+    <div class="container">
 
-    <div class="project-card">
+      <h2 class="section-title">Projects</h2>
 
-      <h3>Royal Bank of Canada</h3>
+      <div class="glass-card project">
 
-      <ul>
-        <li>ETL Monitoring and Support</li>
-        <li>Production Support Activities</li>
-        <li>SQL Validations and Data Checks</li>
-        <li>Incident Resolution</li>
-        <li>ServiceNow Ticket Handling</li>
-        <li>Linux & Hadoop Monitoring</li>
-        <li>Automation Support Activities</li>
-      </ul>
+        <h3>Royal Bank of Canada</h3>
+
+        <ul>
+          <li>ETL Monitoring and Support</li>
+          <li>Production Support Activities</li>
+          <li>SQL Validations and Data Checks</li>
+          <li>Incident Resolution</li>
+          <li>ServiceNow Ticket Handling</li>
+          <li>Linux & Hadoop Monitoring</li>
+          <li>Automation Support Activities</li>
+        </ul>
+
+      </div>
 
     </div>
 
@@ -736,17 +688,23 @@
 
   <section id="contact">
 
-    <h2 class="section-title">Contact</h2>
+    <div class="container">
 
-    <div class="contact-card">
+      <h2 class="section-title">Contact</h2>
 
-      <p>📧 donthula.prathyusha@cognizant.com</p>
+      <div class="glass-card contact">
 
-      <p>📱 9642164721</p>
+        <p>📧 donthula.prathyusha@cognizant.com</p>
+
+        <p>📱 9642164721</p>
+
+      </div>
 
     </div>
 
   </section>
+
+  <!-- FOOTER -->
 
   <footer>
     © 2026 Prathyusha Donthula Portfolio
