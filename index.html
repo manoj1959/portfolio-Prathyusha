@@ -4,10 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prathyusha Portfolio</title>
 
-  <title>Prathyusha Donthula | Portfolio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
 
@@ -21,116 +19,47 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: #050816;
-      color: white;
+      background: #f4f4f4;
       overflow-x: hidden;
-      position: relative;
-    }
-
-    /* ANIMATED BACKGROUND */
-
-    .blob {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(100px);
-      z-index: -1;
-      animation: blobMove 15s infinite alternate ease-in-out;
-    }
-
-    .blob1 {
-      width: 350px;
-      height: 350px;
-      background: #00d9ff40;
-      top: 0;
-      left: 0;
-    }
-
-    .blob2 {
-      width: 350px;
-      height: 350px;
-      background: #7b2cff40;
-      bottom: 0;
-      right: 0;
-      animation-duration: 18s;
-    }
-
-    .blob3 {
-      width: 250px;
-      height: 250px;
-      background: #ff00aa30;
-      top: 40%;
-      left: 40%;
-      animation-duration: 20s;
-    }
-
-    @keyframes blobMove {
-      from {
-        transform: translate(0px, 0px) scale(1);
-      }
-
-      to {
-        transform: translate(50px, -40px) scale(1.2);
-      }
+      color: #111;
     }
 
     /* NAVBAR */
 
     nav {
-      position: fixed;
       width: 100%;
+      position: fixed;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(15px);
-      background: rgba(0, 0, 0, 0.3);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
+      padding: 25px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.6);
     }
 
     .logo {
-      font-size: 30px;
-      font-weight: 700;
-      color: #00d9ff;
+      font-size: 35px;
+      font-weight: 800;
+      color: #ff7b29;
     }
 
     nav ul {
       display: flex;
       list-style: none;
-      gap: 30px;
+      gap: 40px;
     }
 
     nav ul li a {
       text-decoration: none;
-      color: white;
-      transition: 0.3s;
+      color: #111;
       font-weight: 500;
-      position: relative;
+      transition: 0.3s;
     }
 
     nav ul li a:hover {
-      color: #00d9ff;
-    }
-
-    nav ul li a::after {
-      content: '';
-      width: 0%;
-      height: 2px;
-      background: #00d9ff;
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-      transition: 0.4s;
-    }
-
-    nav ul li a:hover::after {
-      width: 100%;
+      color: #ff7b29;
     }
 
     /* HERO */
@@ -138,129 +67,250 @@
     .hero {
       min-height: 100vh;
       display: flex;
+      align-items: center;
       justify-content: center;
-      align-items: center;
-      padding: 120px 20px 80px;
-    }
-
-    .hero-container {
-      max-width: 1200px;
-      width: 100%;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      align-items: center;
-      gap: 60px;
-    }
-
-    .hero-text h3 {
-      color: #00d9ff;
-      font-size: 25px;
-      margin-bottom: 15px;
-      animation: fadeUp 1s ease;
-    }
-
-    .hero-text h1 {
-      font-size: 75px;
-      line-height: 1.1;
-      margin-bottom: 25px;
-      animation: fadeUp 1.2s ease;
-    }
-
-    .hero-text p {
-      color: #d1d1d1;
-      line-height: 2;
-      font-size: 18px;
-      margin-bottom: 35px;
-      animation: fadeUp 1.4s ease;
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0px);
-      }
-    }
-
-    .buttons {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 15px 32px;
-      border-radius: 14px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.4s;
       position: relative;
+      padding: 120px 8%;
       overflow: hidden;
     }
 
-    .btn::before {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.2);
-      top: 0;
-      left: 0;
-      transition: 0.5s;
-    }
-
-    .btn:hover::before {
+    .hero-content {
       width: 100%;
-    }
-
-    .btn-primary {
-      background: linear-gradient(45deg, #00d9ff, #7b2cff);
-      color: white;
-      box-shadow: 0 0 30px #00d9ff50;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-5px) scale(1.05);
-    }
-
-    .btn-secondary {
-      border: 1px solid #00d9ff;
-      color: #00d9ff;
-    }
-
-    .btn-secondary:hover {
-      background: #00d9ff;
-      color: black;
-      transform: translateY(-5px);
-    }
-
-    /* HERO IMAGE */
-
-    .hero-image {
-      display: flex;
-      justify-content: center;
+      max-width: 1400px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
       position: relative;
     }
 
-    .hero-image img {
-      width: 400px;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 5px solid #00d9ff;
+    /* LEFT */
 
-      animation:
-        float 4s ease-in-out infinite,
-        glow 3s infinite alternate;
-
-      box-shadow:
-        0 0 30px #00d9ff80,
-        0 0 60px #7b2cff50;
+    .left-text {
+      font-size: 18px;
+      line-height: 2;
+      color: #444;
+      animation: leftFade 1s ease;
     }
+
+    /* CENTER */
+
+    .center {
+      text-align: center;
+      position: relative;
+    }
+
+    .hello {
+      display: inline-block;
+      border: 2px solid #111;
+      border-radius: 50px;
+      padding: 12px 28px;
+      margin-bottom: 25px;
+      background: white;
+      font-weight: 500;
+      animation: topFade 1s ease;
+    }
+
+    .center h1 {
+      font-size: 95px;
+      line-height: 1;
+      font-weight: 800;
+      z-index: 2;
+      position: relative;
+      animation: topFade 1.2s ease;
+    }
+
+    .center h1 span {
+      color: #ff7b29;
+    }
+
+    .orange-circle {
+      width: 650px;
+      height: 650px;
+      background: #ffb26b;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -350px;
+      z-index: 0;
+    }
+
+    .hero-image {
+      position: relative;
+      z-index: 5;
+      margin-top: -30px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .hero-image img {
+      width: 430px;
+      filter: drop-shadow(0px 25px 40px rgba(0, 0, 0, 0.25));
+    }
+
+    /* BUTTONS */
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: -20px;
+      position: relative;
+      z-index: 20;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      padding: 18px 38px;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: 600;
+      transition: 0.4s;
+    }
+
+    .btn1 {
+      background: #ff7b29;
+      color: white;
+      box-shadow: 0 15px 30px rgba(255, 123, 41, 0.4);
+    }
+
+    .btn2 {
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(15px);
+      color: #111;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .buttons a:hover {
+      transform: translateY(-10px) scale(1.05);
+    }
+
+    /* RIGHT */
+
+    .right-box {
+      text-align: right;
+      animation: rightFade 1s ease;
+    }
+
+    .stars {
+      color: #ff7b29;
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .exp {
+      font-size: 58px;
+      font-weight: 700;
+    }
+
+    .exp-small {
+      color: #555;
+      font-size: 18px;
+    }
+
+    /* FLOATING EFFECTS */
+
+    .blur1,
+    .blur2 {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: -1;
+    }
+
+    .blur1 {
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 123, 41, 0.35);
+      top: 100px;
+      left: -100px;
+    }
+
+    .blur2 {
+      width: 250px;
+      height: 250px;
+      background: rgba(0, 195, 255, 0.25);
+      right: -50px;
+      bottom: 100px;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 120px 8%;
+    }
+
+    .title {
+      font-size: 70px;
+      text-align: center;
+      margin-bottom: 70px;
+      font-weight: 800;
+    }
+
+    .title span {
+      color: #ff7b29;
+    }
+
+    /* CARDS */
+
+    .card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      border-radius: 35px;
+      padding: 50px;
+      margin-bottom: 40px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      transition: 0.5s;
+    }
+
+    .card:hover {
+      transform: translateY(-15px) rotate(1deg);
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+
+    .skill {
+      background: white;
+      border-radius: 30px;
+      padding: 40px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      transition: 0.5s;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .skill:hover {
+      background: #ff7b29;
+      color: white;
+      transform: translateY(-15px) scale(1.05);
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #555;
+    }
+
+    /* ANIMATION */
 
     @keyframes float {
       0% {
@@ -276,222 +326,121 @@
       }
     }
 
-    @keyframes glow {
+    @keyframes topFade {
       from {
-        box-shadow:
-          0 0 20px #00d9ff80,
-          0 0 40px #7b2cff50;
+        opacity: 0;
+        transform: translateY(-60px);
       }
 
       to {
-        box-shadow:
-          0 0 50px #00d9ff,
-          0 0 90px #7b2cff;
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
-    /* SECTIONS */
+    @keyframes leftFade {
+      from {
+        opacity: 0;
+        transform: translateX(-80px);
+      }
 
-    section {
-      padding: 100px 20px;
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
-    .container {
-      max-width: 1200px;
-      margin: auto;
+    @keyframes rightFade {
+      from {
+        opacity: 0;
+        transform: translateX(80px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
-    .section-title {
-      text-align: center;
-      font-size: 55px;
-      margin-bottom: 60px;
-      color: #00d9ff;
-    }
+    /* MOBILE */
 
-    /* GLASS CARD */
+    @media(max-width:1100px) {
 
-    .glass-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(15px);
-      border-radius: 25px;
-      padding: 35px;
-      transition: 0.5s;
-      position: relative;
-      overflow: hidden;
-    }
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 60px;
+      }
 
-    .glass-card::before {
-      content: '';
-      position: absolute;
-      width: 150%;
-      height: 150%;
-      background: linear-gradient(
-        rgba(255,255,255,0.1),
-        transparent
-      );
-      transform: rotate(25deg);
-      top: -120%;
-      left: -120%;
-      transition: 0.8s;
-    }
-
-    .glass-card:hover::before {
-      top: -20%;
-      left: -20%;
-    }
-
-    .glass-card:hover {
-      transform:
-        translateY(-12px)
-        scale(1.02);
-
-      border-color: #00d9ff;
-
-      box-shadow:
-        0 0 35px #00d9ff30;
-    }
-
-    .about p,
-    .exp-card p,
-    .project ul,
-    .contact p {
-      line-height: 2;
-      color: #d1d1d1;
-      font-size: 17px;
-    }
-
-    /* SKILLS */
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-    }
-
-    .skill-card {
-      text-align: center;
-      padding: 35px;
-      transition: 0.4s;
-    }
-
-    .skill-card:hover {
-      transform:
-        translateY(-15px)
-        rotate(2deg)
-        scale(1.05);
-    }
-
-    .skill-card h3 {
-      font-size: 24px;
-    }
-
-    /* EXPERIENCE */
-
-    .timeline {
-      border-left: 3px solid #00d9ff;
-      padding-left: 30px;
-    }
-
-    .exp-card h3,
-    .project h3 {
-      color: #00d9ff;
-      margin-bottom: 15px;
-      font-size: 28px;
-    }
-
-    .project ul {
-      margin-left: 20px;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      text-align: center;
-    }
-
-    .contact p {
-      margin-bottom: 15px;
-      font-size: 20px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #999;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    /* RESPONSIVE */
-
-    @media(max-width:900px) {
-
-      .hero-text {
+      .right-box,
+      .left-text {
         text-align: center;
       }
 
-      .buttons {
-        justify-content: center;
-      }
-
-      .hero-text h1 {
-        font-size: 50px;
+      .center h1 {
+        font-size: 65px;
       }
 
       .hero-image img {
-        width: 300px;
-        height: 300px;
+        width: 320px;
       }
 
-      .section-title {
-        font-size: 40px;
+      .orange-circle {
+        width: 500px;
+        height: 500px;
+        bottom: -250px;
       }
+
     }
 
-    @media(max-width:600px) {
+    @media(max-width:700px) {
 
       nav ul {
         display: none;
       }
 
-      .hero-text h1 {
-        font-size: 40px;
+      .center h1 {
+        font-size: 48px;
       }
 
-      .hero-text p {
-        font-size: 16px;
+      .buttons {
+        flex-direction: column;
       }
+
+      .hero-image img {
+        width: 250px;
+      }
+
+      .orange-circle {
+        width: 380px;
+        height: 380px;
+        bottom: -180px;
+      }
+
+      .title {
+        font-size: 50px;
+      }
+
     }
   </style>
+
 </head>
 
 <body>
 
-  <!-- ANIMATED BACKGROUND -->
-
-  <div class="blob blob1"></div>
-  <div class="blob blob2"></div>
-  <div class="blob blob3"></div>
-
-  <!-- NAVBAR -->
+  <!-- NAV -->
 
   <nav>
 
-    <div class="nav-container">
+    <div class="logo">Portfolio</div>
 
-      <div class="logo">Portfolio</div>
-
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-    </div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
   </nav>
 
@@ -499,37 +448,62 @@
 
   <section class="hero">
 
-    <div class="hero-container">
+    <div class="blur1"></div>
+    <div class="blur2"></div>
 
-      <div class="hero-text">
+    <div class="hero-content">
 
-        <h3>Hello, I'm</h3>
+      <!-- LEFT -->
 
-        <h1>Prathyusha Donthula</h1>
+      <div class="left-text">
 
-        <p>
-          Experienced Programmer Analyst at Cognizant Technology Solutions
-          with expertise in ETL, SQL, Linux, UNIX, IBM InfoSphere DataStage,
-          Excel, C Basics, Production Support and Incident Management.
-        </p>
+        Prathyusha is a passionate Programmer Analyst skilled in ETL Support,
+        SQL validations, Linux Monitoring, IBM DataStage and Production Support
+        activities.
+
+      </div>
+
+      <!-- CENTER -->
+
+      <div class="center">
+
+        <div class="hello">Hello!</div>
+
+        <h1>
+          I'm <span>Prathyusha,</span><br>
+          Programmer<br>
+          Analyst
+        </h1>
+
+        <div class="hero-image">
+          <img src="profile.jpeg">
+        </div>
 
         <div class="buttons">
 
-          <a href="resume.pdf" class="btn btn-primary" download>
-            Download Resume
+          <a href="resume.pdf" download class="btn1">
+            Download Resume ↗
           </a>
 
-          <a href="#contact" class="btn btn-secondary">
-            Contact Me
+          <a href="#contact" class="btn2">
+            Contact Me ↗
           </a>
 
         </div>
 
+        <div class="orange-circle"></div>
+
       </div>
 
-      <div class="hero-image">
+      <!-- RIGHT -->
 
-        <img src="profile.jpeg" alt="Prathyusha">
+      <div class="right-box">
+
+        <div class="stars">★★★★★</div>
+
+        <div class="exp">2+ Years</div>
+
+        <div class="exp-small">Experience</div>
 
       </div>
 
@@ -541,22 +515,23 @@
 
   <section id="about">
 
-    <div class="container">
+    <h2 class="title">
+      About <span>Me</span>
+    </h2>
 
-      <h2 class="section-title">About Me</h2>
+    <div class="card">
 
-      <div class="glass-card about">
+      <p style="font-size:20px; line-height:2; color:#444;">
 
-        <p>
-          Skilled Programmer Analyst with hands-on experience in ETL support,
-          SQL validations, Linux support, Incident Management,
-          Production Support and automation support for
-          Royal Bank of Canada project at Cognizant.
-          Experienced in handling 50+ applications,
-          SLA monitoring, deployments and ticket resolution activities.
-        </p>
+        Experienced Programmer Analyst at Cognizant Technology Solutions
+        with expertise in SQL, Excel, IBM InfoSphere DataStage,
+        Linux, UNIX and ETL support activities.
 
-      </div>
+        Skilled in Production Support, Monitoring,
+        Incident Management, ServiceNow ticket handling,
+        Automation Support and SLA tracking.
+
+      </p>
 
     </div>
 
@@ -566,53 +541,31 @@
 
   <section id="skills">
 
-    <div class="container">
+    <h2 class="title">
+      My <span>Skills</span>
+    </h2>
 
-      <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
 
-      <div class="skills-grid">
+      <div class="skill">SQL</div>
 
-        <div class="glass-card skill-card">
-          <h3>SQL</h3>
-        </div>
+      <div class="skill">Excel</div>
 
-        <div class="glass-card skill-card">
-          <h3>Excel</h3>
-        </div>
+      <div class="skill">C Basics</div>
 
-        <div class="glass-card skill-card">
-          <h3>C Basics</h3>
-        </div>
+      <div class="skill">IBM DataStage</div>
 
-        <div class="glass-card skill-card">
-          <h3>IBM DataStage</h3>
-        </div>
+      <div class="skill">Linux</div>
 
-        <div class="glass-card skill-card">
-          <h3>Linux</h3>
-        </div>
+      <div class="skill">UNIX</div>
 
-        <div class="glass-card skill-card">
-          <h3>UNIX</h3>
-        </div>
+      <div class="skill">ServiceNow</div>
 
-        <div class="glass-card skill-card">
-          <h3>ServiceNow</h3>
-        </div>
+      <div class="skill">OpenShift</div>
 
-        <div class="glass-card skill-card">
-          <h3>Stonebranch</h3>
-        </div>
+      <div class="skill">Stonebranch</div>
 
-        <div class="glass-card skill-card">
-          <h3>OpenShift</h3>
-        </div>
-
-        <div class="glass-card skill-card">
-          <h3>PuTTY</h3>
-        </div>
-
-      </div>
+      <div class="skill">PuTTY</div>
 
     </div>
 
@@ -622,35 +575,31 @@
 
   <section id="experience">
 
-    <div class="container">
+    <h2 class="title">
+      Work <span>Experience</span>
+    </h2>
 
-      <h2 class="section-title">Experience</h2>
+    <div class="card">
 
-      <div class="timeline">
+      <h2 style="color:#ff7b29; font-size:40px; margin-bottom:15px;">
+        Cognizant Technology Solutions
+      </h2>
 
-        <div class="glass-card exp-card">
+      <p style="font-size:20px; color:#444; margin-bottom:25px;">
+        Programmer Analyst | August 2023 - Present
+      </p>
 
-          <h3>Cognizant Technology Solutions</h3>
+      <p style="font-size:19px; line-height:2; color:#444;">
 
-          <p>
-            Programmer Analyst | August 2023 - Present
-          </p>
+        • ETL support for 50+ applications<br>
+        • SQL validations and issue resolution<br>
+        • Linux & Hadoop file monitoring<br>
+        • Production, UAT & DEV support<br>
+        • Incident management handling<br>
+        • Automation support activities<br>
+        • SLA monitoring and ticket handling
 
-          <br>
-
-          <p>
-            • ETL support for 50+ applications<br>
-            • SQL validations and issue resolution<br>
-            • Linux & Hadoop monitoring<br>
-            • Production, UAT & DEV support<br>
-            • Incident Management handling<br>
-            • Automation support activities<br>
-            • SLA monitoring and ticket handling
-          </p>
-
-        </div>
-
-      </div>
+      </p>
 
     </div>
 
@@ -660,25 +609,26 @@
 
   <section id="projects">
 
-    <div class="container">
+    <h2 class="title">
+      My <span>Projects</span>
+    </h2>
 
-      <h2 class="section-title">Projects</h2>
+    <div class="card">
 
-      <div class="glass-card project">
+      <h2 style="color:#ff7b29; font-size:40px; margin-bottom:25px;">
+        Royal Bank of Canada
+      </h2>
 
-        <h3>Royal Bank of Canada</h3>
+      <p style="font-size:19px; line-height:2; color:#444;">
 
-        <ul>
-          <li>ETL Monitoring and Support</li>
-          <li>Production Support Activities</li>
-          <li>SQL Validations and Data Checks</li>
-          <li>Incident Resolution</li>
-          <li>ServiceNow Ticket Handling</li>
-          <li>Linux & Hadoop Monitoring</li>
-          <li>Automation Support Activities</li>
-        </ul>
+        • ETL Monitoring and Support<br>
+        • SQL validations and Data Checks<br>
+        • Incident Resolution Activities<br>
+        • Production Support Operations<br>
+        • Linux and Hadoop Monitoring<br>
+        • Automation Support Tasks
 
-      </div>
+      </p>
 
     </div>
 
@@ -688,26 +638,22 @@
 
   <section id="contact">
 
-    <div class="container">
+    <h2 class="title">
+      Contact <span>Me</span>
+    </h2>
 
-      <h2 class="section-title">Contact</h2>
+    <div class="card contact">
 
-      <div class="glass-card contact">
+      <p>📧 donthula.prathyusha@cognizant.com</p>
 
-        <p>📧 donthula.prathyusha@cognizant.com</p>
-
-        <p>📱 9642164721</p>
-
-      </div>
+      <p>📱 9642164721</p>
 
     </div>
 
   </section>
 
-  <!-- FOOTER -->
-
   <footer>
-    © 2026 Prathyusha Donthula Portfolio
+    © 2026 Prathyusha Portfolio
   </footer>
 
 </body>
