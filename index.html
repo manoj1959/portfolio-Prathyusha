@@ -1,305 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prathyusha Donthula Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Prathyusha Donthula | Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
-    body{
-      font-family:'Poppins',sans-serif;
-      background:#0b0f19;
-      color:white;
-      overflow-x:hidden;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #060816;
+      color: white;
+      overflow-x: hidden;
     }
 
-    nav{
-      width:100%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:25px 10%;
-      position:fixed;
-      top:0;
-      backdrop-filter:blur(15px);
-      background:rgba(0,0,0,0.3);
-      z-index:1000;
+    body::before {
+      content: "";
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: #00d9ff20;
+      filter: blur(120px);
+      top: -200px;
+      right: -100px;
+      z-index: -1;
     }
 
-    nav h1{
-      color:#00d9ff;
-      font-size:28px;
+    body::after {
+      content: "";
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: #7b2cff20;
+      filter: blur(120px);
+      bottom: -200px;
+      left: -100px;
+      z-index: -1;
     }
 
-    nav ul{
-      display:flex;
-      gap:30px;
-      list-style:none;
+    nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(15px);
+      background: rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    nav ul li a{
-      color:white;
-      text-decoration:none;
-      transition:0.3s;
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    nav ul li a:hover{
-      color:#00d9ff;
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #00d9ff;
     }
 
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:120px 20px;
-      background:linear-gradient(to bottom,#0b0f19,#121b2d);
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
     }
 
-    .hero-content{
-      max-width:900px;
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+      font-weight: 500;
     }
 
-    .hero h2{
-      font-size:22px;
-      color:#00d9ff;
-      margin-bottom:15px;
-      animation:fadeIn 1s ease;
+    nav ul li a:hover {
+      color: #00d9ff;
     }
 
-    .hero h1{
-      font-size:75px;
-      line-height:1.1;
-      margin-bottom:25px;
-      animation:fadeIn 1.3s ease;
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 120px 20px 80px;
     }
 
-    .hero p{
-      color:#bcbcbc;
-      font-size:18px;
-      line-height:1.8;
-      margin-bottom:35px;
-      animation:fadeIn 1.6s ease;
+    .hero-container {
+      max-width: 1200px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      align-items: center;
+      gap: 60px;
     }
 
-    .buttons{
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:20px;
+    .hero-text h3 {
+      color: #00d9ff;
+      font-size: 24px;
+      margin-bottom: 15px;
     }
 
-    .buttons a{
-      text-decoration:none;
-      padding:14px 30px;
-      border-radius:12px;
-      transition:0.4s;
-      font-weight:600;
+    .hero-text h1 {
+      font-size: 75px;
+      line-height: 1.1;
+      margin-bottom: 25px;
     }
 
-    .btn1{
-      background:#00d9ff;
-      color:black;
+    .hero-text p {
+      color: #c5c5c5;
+      line-height: 1.9;
+      font-size: 18px;
+      margin-bottom: 35px;
     }
 
-    .btn1:hover{
-      transform:translateY(-5px);
+    .buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .btn2{
-      border:1px solid #00d9ff;
-      color:#00d9ff;
+    .btn {
+      padding: 14px 30px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.4s;
     }
 
-    .btn2:hover{
-      background:#00d9ff;
-      color:black;
+    .btn-primary {
+      background: linear-gradient(45deg, #00d9ff, #7b2cff);
+      color: white;
+      box-shadow: 0 0 30px #00d9ff50;
     }
 
-    section{
-      padding:100px 10%;
+    .btn-primary:hover {
+      transform: translateY(-5px);
     }
 
-    .title{
-      font-size:45px;
-      margin-bottom:50px;
-      text-align:center;
-      color:#00d9ff;
+    .btn-secondary {
+      border: 1px solid #00d9ff;
+      color: #00d9ff;
     }
 
-    .about-card,
-    .exp-card,
-    .project-card,
-    .contact-card{
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.08);
-      padding:35px;
-      border-radius:25px;
-      backdrop-filter:blur(10px);
-      transition:0.4s;
+    .btn-secondary:hover {
+      background: #00d9ff;
+      color: black;
     }
 
-    .about-card:hover,
-    .exp-card:hover,
-    .project-card:hover,
-    .contact-card:hover{
-      transform:translateY(-8px);
-      border-color:#00d9ff;
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      position: relative;
     }
 
-    .about-card p{
-      color:#cfcfcf;
-      line-height:1.9;
-      font-size:17px;
+    .hero-image img {
+      width: 380px;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #00d9ff;
+      box-shadow:
+        0 0 30px #00d9ff80,
+        0 0 60px #7b2cff50;
+      animation: float 4s ease-in-out infinite;
     }
 
-    .skills-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:25px;
-    }
-
-    .skill{
-      background:rgba(255,255,255,0.05);
-      padding:25px;
-      border-radius:18px;
-      text-align:center;
-      transition:0.4s;
-      border:1px solid rgba(255,255,255,0.08);
-    }
-
-    .skill:hover{
-      transform:translateY(-8px);
-      background:#00d9ff;
-      color:black;
-    }
-
-    .skill h3{
-      font-size:22px;
-    }
-
-    .timeline{
-      border-left:3px solid #00d9ff;
-      padding-left:30px;
-    }
-
-    .exp-card{
-      margin-bottom:30px;
-    }
-
-    .exp-card h3{
-      margin-bottom:10px;
-      color:#00d9ff;
-    }
-
-    .exp-card p{
-      color:#cfcfcf;
-      line-height:1.8;
-    }
-
-    .project-card ul{
-      margin-left:20px;
-      color:#cfcfcf;
-      line-height:2;
-    }
-
-    .contact-card{
-      text-align:center;
-    }
-
-    .contact-card p{
-      margin-bottom:15px;
-      color:#cfcfcf;
-      font-size:18px;
-    }
-
-    footer{
-      text-align:center;
-      padding:30px;
-      color:#888;
-      border-top:1px solid rgba(255,255,255,0.08);
-    }
-
-    @keyframes fadeIn{
-      from{
-        opacity:0;
-        transform:translateY(40px);
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
       }
-      to{
-        opacity:1;
-        transform:translateY(0);
+
+      50% {
+        transform: translateY(-20px);
+      }
+
+      100% {
+        transform: translateY(0px);
       }
     }
 
-    @media(max-width:768px){
-
-      nav{
-        flex-direction:column;
-        gap:15px;
-      }
-
-      nav ul{
-        gap:15px;
-        flex-wrap:wrap;
-        justify-content:center;
-      }
-
-      .hero h1{
-        font-size:45px;
-      }
-
-      .title{
-        font-size:35px;
-      }
-
+    section {
+      padding: 100px 20px;
     }
 
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 50px;
+      margin-bottom: 60px;
+      color: #00d9ff;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(15px);
+      border-radius: 25px;
+      padding: 35px;
+      transition: 0.4s;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-10px);
+      border-color: #00d9ff;
+      box-shadow: 0 0 30px #00d9ff20;
+    }
+
+    .about p {
+      line-height: 2;
+      color: #cfcfcf;
+      font-size: 17px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-card {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .skill-card h3 {
+      font-size: 22px;
+    }
+
+    .timeline {
+      border-left: 3px solid #00d9ff;
+      padding-left: 30px;
+    }
+
+    .exp-card {
+      margin-bottom: 30px;
+    }
+
+    .exp-card h3 {
+      color: #00d9ff;
+      margin-bottom: 10px;
+    }
+
+    .exp-card p {
+      color: #d4d4d4;
+      line-height: 1.9;
+    }
+
+    .project ul {
+      margin-left: 20px;
+      line-height: 2;
+      color: #d4d4d4;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #d4d4d4;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #999;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    @media(max-width:900px) {
+
+      .hero-text h1 {
+        font-size: 50px;
+      }
+
+      .hero-image img {
+        width: 300px;
+        height: 300px;
+      }
+
+      nav ul {
+        gap: 15px;
+      }
+
+      .section-title {
+        font-size: 40px;
+      }
+    }
+
+    @media(max-width:600px) {
+
+      nav ul {
+        display: none;
+      }
+
+      .hero-text {
+        text-align: center;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .hero-text h1 {
+        font-size: 40px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
   <nav>
-    <h1>Portfolio</h1>
+    <div class="nav-container">
 
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+      <div class="logo">Portfolio</div>
+
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </div>
   </nav>
 
   <section class="hero">
 
-    <div class="hero-content">
+    <div class="hero-container">
 
-      <h2>Hello, I'm</h2>
+      <div class="hero-text">
 
-      <h1>Prathyusha Donthula</h1>
+        <h3>Hello, I'm</h3>
 
-      <p>
-        Experienced Programmer Analyst at Cognizant Technology Solutions
-        with expertise in ETL, SQL, Linux, UNIX, IBM InfoSphere DataStage,
-        Production Support and Incident Management.
-      </p>
+        <h1>Prathyusha Donthula</h1>
 
-      <div class="buttons">
-        <a href="#contact" class="btn1">Contact Me</a>
-        <a href="#skills" class="btn2">View Skills</a>
+        <p>
+          Experienced Programmer Analyst at Cognizant Technology Solutions
+          with expertise in ETL, SQL, Linux, UNIX, IBM InfoSphere DataStage,
+          Excel, C Basics, Production Support and Incident Management.
+        </p>
+
+        <div class="buttons">
+
+          <a href="resume.pdf" class="btn btn-primary" download>
+            Download Resume
+          </a>
+
+          <a href="#contact" class="btn btn-secondary">
+            Contact Me
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+
+        <img src="profile.jpeg" alt="Prathyusha">
+
       </div>
 
     </div>
@@ -308,17 +389,22 @@
 
   <section id="about">
 
-    <h2 class="title">About Me</h2>
+    <div class="container">
 
-    <div class="about-card">
+      <h2 class="section-title">About Me</h2>
 
-      <p>
-        Skilled Programmer Analyst with hands-on experience in ETL support,
-        SQL validations, Linux support, production monitoring,
-        incident handling and automation support for Royal Bank of Canada project.
-        Experienced in managing production environments, ticket resolutions,
-        SLA monitoring and supporting 50+ applications.
-      </p>
+      <div class="glass-card about">
+
+        <p>
+          Skilled Programmer Analyst with hands-on experience in ETL support,
+          SQL validations, Linux support, Incident Management,
+          Production Support activities and automation support for
+          Royal Bank of Canada project at Cognizant.
+          Experienced in handling 50+ applications,
+          SLA monitoring, deployments and ticket resolution activities.
+        </p>
+
+      </div>
 
     </div>
 
@@ -326,20 +412,53 @@
 
   <section id="skills">
 
-    <h2 class="title">Technical Skills</h2>
+    <div class="container">
 
-    <div class="skills-grid">
+      <h2 class="section-title">Skills</h2>
 
-      <div class="skill"><h3>SQL</h3></div>
-      <div class="skill"><h3>Excel</h3></div>
-      <div class="skill"><h3>IBM DataStage</h3></div>
-      <div class="skill"><h3>Linux</h3></div>
-      <div class="skill"><h3>UNIX</h3></div>
-      <div class="skill"><h3>ServiceNow</h3></div>
-      <div class="skill"><h3>Stonebranch</h3></div>
-      <div class="skill"><h3>OpenShift</h3></div>
-      <div class="skill"><h3>PuTTY</h3></div>
-      <div class="skill"><h3>C Basics</h3></div>
+      <div class="skills-grid">
+
+        <div class="glass-card skill-card">
+          <h3>SQL</h3>
+        </div>
+
+        <div class="glass-card skill-card">
+          <h3>Excel</h3>
+        </div>
+
+        <div class="glass-card skill-card">
+          <h3>C Basics</h3>
+        </div>
+
+        <div class="glass-card skill-card">
+          <h3>IBM DataStage</h3>
+        </div>
+
+        <div class="glass-card skill-card">
+          <h3>Linux</h3>
+        </div>
+
+        <div class="glass-card skill-card">
+          <h3>UNIX</h3>
+        </div>
+
+        <div class="glass-card skill-card">
+          <h3>ServiceNow</h3>
+        </div>
+
+        <div class="glass-card skill-card">
+          <h3>Stonebranch</h3>
+        </div>
+
+        <div class="glass-card skill-card">
+          <h3>OpenShift</h3>
+        </div>
+
+        <div class="glass-card skill-card">
+          <h3>PuTTY</h3>
+        </div>
+
+      </div>
 
     </div>
 
@@ -347,29 +466,33 @@
 
   <section id="experience">
 
-    <h2 class="title">Experience</h2>
+    <div class="container">
 
-    <div class="timeline">
+      <h2 class="section-title">Experience</h2>
 
-      <div class="exp-card">
+      <div class="timeline">
 
-        <h3>Cognizant Technology Solutions</h3>
+        <div class="glass-card exp-card">
 
-        <p>
-          Programmer Analyst | August 2023 - Present
-        </p>
+          <h3>Cognizant Technology Solutions</h3>
 
-        <br>
+          <p>
+            Programmer Analyst | August 2023 - Present
+          </p>
 
-        <p>
-          • ETL support for 50+ applications<br>
-          • Production, UAT & DEV support<br>
-          • SQL data validations and issue resolution<br>
-          • Incident management handling<br>
-          • Linux and Hadoop file checks<br>
-          • Automation support for manual activities<br>
-          • SLA monitoring and ticket handling
-        </p>
+          <br>
+
+          <p>
+            • ETL support for 50+ applications<br>
+            • SQL validations and issue resolution<br>
+            • Linux & Hadoop file monitoring<br>
+            • Production, UAT & DEV support<br>
+            • Incident Management handling<br>
+            • Automation support for manual activities<br>
+            • SLA monitoring and ticket handling
+          </p>
+
+        </div>
 
       </div>
 
@@ -379,22 +502,27 @@
 
   <section id="projects">
 
-    <h2 class="title">Projects</h2>
+    <div class="container">
 
-    <div class="project-card">
+      <h2 class="section-title">Projects</h2>
 
-      <h3 style="color:#00d9ff; margin-bottom:20px;">
-        Royal Bank of Canada
-      </h3>
+      <div class="glass-card project">
 
-      <ul>
-        <li>ETL Monitoring and Support</li>
-        <li>SQL Validations</li>
-        <li>Production Incident Handling</li>
-        <li>Hadoop File Checks</li>
-        <li>ServiceNow Ticket Resolution</li>
-        <li>Automation and Support Activities</li>
-      </ul>
+        <h3 style="color:#00d9ff; margin-bottom:20px;">
+          Royal Bank of Canada
+        </h3>
+
+        <ul>
+          <li>ETL Monitoring and Support</li>
+          <li>Production Support Activities</li>
+          <li>SQL Validations and Data Checks</li>
+          <li>Incident Resolution</li>
+          <li>ServiceNow Ticket Handling</li>
+          <li>Linux & Hadoop File Monitoring</li>
+          <li>Automation Support Activities</li>
+        </ul>
+
+      </div>
 
     </div>
 
@@ -402,13 +530,17 @@
 
   <section id="contact">
 
-    <h2 class="title">Contact</h2>
+    <div class="container">
 
-    <div class="contact-card">
+      <h2 class="section-title">Contact</h2>
 
-      <p>📧 donthula.prathyusha@cognizant.com</p>
+      <div class="glass-card contact">
 
-      <p>📱 9642164721</p>
+        <p>📧 donthula.prathyusha@cognizant.com</p>
+
+        <p>📱 9642164721</p>
+
+      </div>
 
     </div>
 
@@ -419,4 +551,5 @@
   </footer>
 
 </body>
+
 </html>
