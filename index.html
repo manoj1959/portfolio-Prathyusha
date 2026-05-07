@@ -1,232 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prathyusha Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prathyusha Donthula Portfolio</title>
 
-<style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+  <style>
 
-body{
-background:#0f0f0f;
-color:white;
-line-height:1.6;
-}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
 
-header{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0b0f19;
+      color:white;
+      overflow-x:hidden;
+    }
 
-h1{
-font-size:60px;
-margin-bottom:10px;
-}
+    nav{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:25px 10%;
+      position:fixed;
+      top:0;
+      backdrop-filter:blur(15px);
+      background:rgba(0,0,0,0.3);
+      z-index:1000;
+    }
 
-h2{
-color:orange;
-margin-bottom:20px;
-}
+    nav h1{
+      color:#00d9ff;
+      font-size:28px;
+    }
 
-p{
-max-width:700px;
-color:#ccc;
-font-size:18px;
-}
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
 
-.btn{
-margin-top:30px;
-}
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+    }
 
-.btn a{
-text-decoration:none;
-color:white;
-border:1px solid orange;
-padding:12px 25px;
-margin:10px;
-border-radius:10px;
-display:inline-block;
-transition:0.3s;
-}
+    nav ul li a:hover{
+      color:#00d9ff;
+    }
 
-.btn a:hover{
-background:orange;
-color:black;
-}
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:120px 20px;
+      background:linear-gradient(to bottom,#0b0f19,#121b2d);
+    }
 
-section{
-padding:80px 20px;
-max-width:1000px;
-margin:auto;
-}
+    .hero-content{
+      max-width:900px;
+    }
 
-.title{
-font-size:40px;
-margin-bottom:30px;
-color:orange;
-}
+    .hero h2{
+      font-size:22px;
+      color:#00d9ff;
+      margin-bottom:15px;
+      animation:fadeIn 1s ease;
+    }
 
-.card{
-background:#1a1a1a;
-padding:25px;
-border-radius:15px;
-margin-bottom:20px;
-}
+    .hero h1{
+      font-size:75px;
+      line-height:1.1;
+      margin-bottom:25px;
+      animation:fadeIn 1.3s ease;
+    }
 
-ul{
-margin-left:20px;
-}
+    .hero p{
+      color:#bcbcbc;
+      font-size:18px;
+      line-height:1.8;
+      margin-bottom:35px;
+      animation:fadeIn 1.6s ease;
+    }
 
-li{
-margin-bottom:10px;
-}
+    .buttons{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:20px;
+    }
 
-footer{
-text-align:center;
-padding:30px;
-color:#888;
-}
+    .buttons a{
+      text-decoration:none;
+      padding:14px 30px;
+      border-radius:12px;
+      transition:0.4s;
+      font-weight:600;
+    }
 
-</style>
+    .btn1{
+      background:#00d9ff;
+      color:black;
+    }
 
+    .btn1:hover{
+      transform:translateY(-5px);
+    }
+
+    .btn2{
+      border:1px solid #00d9ff;
+      color:#00d9ff;
+    }
+
+    .btn2:hover{
+      background:#00d9ff;
+      color:black;
+    }
+
+    section{
+      padding:100px 10%;
+    }
+
+    .title{
+      font-size:45px;
+      margin-bottom:50px;
+      text-align:center;
+      color:#00d9ff;
+    }
+
+    .about-card,
+    .exp-card,
+    .project-card,
+    .contact-card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:35px;
+      border-radius:25px;
+      backdrop-filter:blur(10px);
+      transition:0.4s;
+    }
+
+    .about-card:hover,
+    .exp-card:hover,
+    .project-card:hover,
+    .contact-card:hover{
+      transform:translateY(-8px);
+      border-color:#00d9ff;
+    }
+
+    .about-card p{
+      color:#cfcfcf;
+      line-height:1.9;
+      font-size:17px;
+    }
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+    }
+
+    .skill{
+      background:rgba(255,255,255,0.05);
+      padding:25px;
+      border-radius:18px;
+      text-align:center;
+      transition:0.4s;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .skill:hover{
+      transform:translateY(-8px);
+      background:#00d9ff;
+      color:black;
+    }
+
+    .skill h3{
+      font-size:22px;
+    }
+
+    .timeline{
+      border-left:3px solid #00d9ff;
+      padding-left:30px;
+    }
+
+    .exp-card{
+      margin-bottom:30px;
+    }
+
+    .exp-card h3{
+      margin-bottom:10px;
+      color:#00d9ff;
+    }
+
+    .exp-card p{
+      color:#cfcfcf;
+      line-height:1.8;
+    }
+
+    .project-card ul{
+      margin-left:20px;
+      color:#cfcfcf;
+      line-height:2;
+    }
+
+    .contact-card{
+      text-align:center;
+    }
+
+    .contact-card p{
+      margin-bottom:15px;
+      color:#cfcfcf;
+      font-size:18px;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      color:#888;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:45px;
+      }
+
+      .title{
+        font-size:35px;
+      }
+
+    }
+
+  </style>
 </head>
 
 <body>
 
-<header>
+  <nav>
+    <h1>Portfolio</h1>
 
-<h1>Prathyusha Donthula</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<h2>Programmer Analyst</h2>
+  <section class="hero">
 
-<p>
-Experienced Programmer Analyst at Cognizant Technology Solutions
-with expertise in ETL, SQL, Linux, UNIX, Production Support,
-Incident Management and IBM InfoSphere DataStage.
-</p>
+    <div class="hero-content">
 
-<div class="btn">
-<a href="#skills">Skills</a>
-<a href="#contact">Contact</a>
-</div>
+      <h2>Hello, I'm</h2>
 
-</header>
+      <h1>Prathyusha Donthula</h1>
 
-<section>
+      <p>
+        Experienced Programmer Analyst at Cognizant Technology Solutions
+        with expertise in ETL, SQL, Linux, UNIX, IBM InfoSphere DataStage,
+        Production Support and Incident Management.
+      </p>
 
-<h2 class="title">About Me</h2>
+      <div class="buttons">
+        <a href="#contact" class="btn1">Contact Me</a>
+        <a href="#skills" class="btn2">View Skills</a>
+      </div>
 
-<div class="card">
+    </div>
 
-<p>
-Experienced Programmer Analyst handling ETL processes,
-SQL validations, Linux support, production support
-and incident management activities.
-</p>
+  </section>
 
-</div>
+  <section id="about">
 
-</section>
+    <h2 class="title">About Me</h2>
 
-<section id="skills">
+    <div class="about-card">
 
-<h2 class="title">Technical Skills</h2>
+      <p>
+        Skilled Programmer Analyst with hands-on experience in ETL support,
+        SQL validations, Linux support, production monitoring,
+        incident handling and automation support for Royal Bank of Canada project.
+        Experienced in managing production environments, ticket resolutions,
+        SLA monitoring and supporting 50+ applications.
+      </p>
 
-<div class="card">
+    </div>
 
-<ul>
-<li>IBM InfoSphere DataStage</li>
-<li>SQL</li>
-<li>UNIX</li>
-<li>LINUX</li>
-<li>ServiceNow</li>
-<li>Stonebranch</li>
-<li>PuTTY</li>
-<li>OpenShift</li>
-</ul>
+  </section>
 
-</div>
+  <section id="skills">
 
-</section>
+    <h2 class="title">Technical Skills</h2>
 
-<section>
+    <div class="skills-grid">
 
-<h2 class="title">Experience</h2>
+      <div class="skill"><h3>SQL</h3></div>
+      <div class="skill"><h3>Excel</h3></div>
+      <div class="skill"><h3>IBM DataStage</h3></div>
+      <div class="skill"><h3>Linux</h3></div>
+      <div class="skill"><h3>UNIX</h3></div>
+      <div class="skill"><h3>ServiceNow</h3></div>
+      <div class="skill"><h3>Stonebranch</h3></div>
+      <div class="skill"><h3>OpenShift</h3></div>
+      <div class="skill"><h3>PuTTY</h3></div>
+      <div class="skill"><h3>C Basics</h3></div>
 
-<div class="card">
+    </div>
 
-<h3>Cognizant Technology Solutions</h3>
+  </section>
 
-<p>Programmer Analyst | Aug 2023 - Present</p>
+  <section id="experience">
 
-<br>
+    <h2 class="title">Experience</h2>
 
-<ul>
-<li>ETL support for 50+ applications</li>
-<li>Production, UAT & DEV support</li>
-<li>Incident Management handling</li>
-<li>SQL data validation</li>
-<li>Automation support</li>
-<li>SLA monitoring and ticket handling</li>
-</ul>
+    <div class="timeline">
 
-</div>
+      <div class="exp-card">
 
-</section>
+        <h3>Cognizant Technology Solutions</h3>
 
-<section>
+        <p>
+          Programmer Analyst | August 2023 - Present
+        </p>
 
-<h2 class="title">Project</h2>
+        <br>
 
-<div class="card">
+        <p>
+          • ETL support for 50+ applications<br>
+          • Production, UAT & DEV support<br>
+          • SQL data validations and issue resolution<br>
+          • Incident management handling<br>
+          • Linux and Hadoop file checks<br>
+          • Automation support for manual activities<br>
+          • SLA monitoring and ticket handling
+        </p>
 
-<h3>Royal Bank of Canada</h3>
+      </div>
 
-<br>
+    </div>
 
-<ul>
-<li>ETL Monitoring</li>
-<li>SQL Validations</li>
-<li>Hadoop File Checks</li>
-<li>Ticket Resolution</li>
-<li>Incident Handling</li>
-</ul>
+  </section>
 
-</div>
+  <section id="projects">
 
-</section>
+    <h2 class="title">Projects</h2>
 
-<section id="contact">
+    <div class="project-card">
 
-<h2 class="title">Contact</h2>
+      <h3 style="color:#00d9ff; margin-bottom:20px;">
+        Royal Bank of Canada
+      </h3>
 
-<div class="card">
+      <ul>
+        <li>ETL Monitoring and Support</li>
+        <li>SQL Validations</li>
+        <li>Production Incident Handling</li>
+        <li>Hadoop File Checks</li>
+        <li>ServiceNow Ticket Resolution</li>
+        <li>Automation and Support Activities</li>
+      </ul>
 
-<p>Email:donthula.prathyusha@cognizant.com</p>
+    </div>
 
-<br>
+  </section>
 
-<p>Phone: 9642164721</p>
+  <section id="contact">
 
-</div>
+    <h2 class="title">Contact</h2>
 
-</section>
+    <div class="contact-card">
 
-<footer>
-© 2026 Prathyusha Donthula Portfolio
-</footer>
+      <p>📧 donthula.prathyusha@cognizant.com</p>
+
+      <p>📱 9642164721</p>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 Prathyusha Donthula Portfolio
+  </footer>
 
 </body>
 </html>
